@@ -24,7 +24,7 @@ name := "graphframes"
 spName := "graphframes/graphframes"
 
 // Don't forget to set the version
-version := s"0.6.0-SNAPSHOT-spark$sparkBranch"
+version := s"0.6.0-fc-spark$sparkBranch"
 
 // All Spark Packages need a license
 licenses := Seq("Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0"))
@@ -78,3 +78,7 @@ concurrentRestrictions in Global := Seq(
 autoAPIMappings := true
 
 coverageHighlighting := false
+
+publishTo := Some("Artifactory Realm" at "https://fullcontact.artifactoryonline.com/fullcontact/libs-releases-local")
+
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
